@@ -7,27 +7,17 @@ const clear = document.querySelector('.clear');
 
 let firstNum = '';
 let secondNum = '';
-let operation = null;
 
-function operate () {
-    let prevNum = parseFloat(firstNum);
-    let nextNum = parseFloat(secondNum);
-    let result; 
-
-    if (operation == '+') {
-        result = prevNum + nextNum;
+function operate() {
+    num1 = parseFloat(firstNum);
+    num2 = parseFloat(secondNum);
+    if (operators == '+') {
+      num1 += num2;
+    } else if (operators == '-') {
+      num1 -= num2;
+    } else if (operators == '*') {
+      num1 *= num2;
+    } else {
+      num1 /= num2;
     }
-    else if (operation == '-') {
-        result = prevNum - nextNum;
-    }
-    else if (operation == '/') {
-        result = prevNum / nextNum;
-    }
-    else if (operation == '*') {
-        result = prevNum * nextNum;
-    }
-
-    firstNum = result;
-    secondNum = '';
-    operation = null;
 };
