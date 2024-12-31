@@ -1,16 +1,33 @@
-const add = function (num1, num2) {
-    return num1 + num2;
-};
+const display = document.getElementById('display-field');
+const allNumbers = document.querySelectorAll('.numbers');
+const operators = document.querySelectorAll('.operator');
+const decimal = document.querySelector('.decimal');
+const equal = document.querySelector('.equals');
+const clear = document.querySelector('.clear');
 
-const subtract = function (num1, num2) {
-    return num1 - num2;
-};
-const divide = function (num1, num2) {
-    return num1 / num2;
-};
+let firstNum = '';
+let secondNum = '';
+let operation = null;
 
-const multiply = function (num1, num2) {
-    return num1 * num2;
+function operate () {
+    let prevNum = parseFloat(firstNum);
+    let nextNum = parseFloat(secondNum);
+    let result; 
+
+    if (operation == '+') {
+        result = prevNum + nextNum;
+    }
+    else if (operation == '-') {
+        result = prevNum - nextNum;
+    }
+    else if (operation == '/') {
+        result = prevNum / nextNum;
+    }
+    else if (operation == '*') {
+        result = prevNum * nextNum;
+    }
+
+    firstNum = result;
+    secondNum = '';
+    operation = null;
 };
-
-
