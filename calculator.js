@@ -1,16 +1,20 @@
-const display = document.getElementById('display-field');
+const display = document.querySelector('.input-field');
 const allNumbers = document.querySelectorAll('.numbers');
 const operators = document.querySelectorAll('.operator');
 const decimal = document.querySelector('.decimal');
 const equal = document.querySelector('.equals');
 const clear = document.querySelector('.clear');
 
+let previousValue = '';
+let currentValue = '';
+
 let firstNum = '';
 let secondNum = '';
 
-allNumbers.forEach((button) => {
-    button.addEventListener('click', function() {
-        display.textContent += button.allNumbers.value;
+allNumbers.forEach((numbers) => {
+    numbers.addEventListener('click', function() {
+        display.textContent += numbers.value;
+        currentValue = parseFloat(display.innerText);
     })
 })
 ;
@@ -28,3 +32,5 @@ function operate() {
       num1 /= num2;
     }
 };
+
+clear.addEventListener('click', () => display.innerText = "");
