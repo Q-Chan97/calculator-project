@@ -8,6 +8,13 @@ const clear = document.querySelector('.clear');
 let firstNum = '';
 let secondNum = '';
 
+allNumbers.forEach((button) => {
+    button.addEventListener('click', function() {
+        display.textContent += button.allNumbers.value;
+    })
+})
+;
+
 function operate() {
     num1 = parseFloat(firstNum);
     num2 = parseFloat(secondNum);
