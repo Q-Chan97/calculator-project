@@ -33,4 +33,11 @@ function operate() {
     }
 };
 
+operators.forEach((operator) => {
+    operator.addEventListener('click', function() {
+        display.textContent += operator.value;
+        currentValue = display.innerText;
+    })
+});
+
 clear.addEventListener('click', () => display.innerText = "");
