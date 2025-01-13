@@ -4,40 +4,48 @@ const operators = document.querySelectorAll('.operator');
 const decimal = document.querySelector('.decimal');
 const equal = document.querySelector('.equals');
 const clear = document.querySelector('.clear');
+const positiveNegative = document.querySelector('.posNeg');
 
-let previousValue = '';
-let currentValue = '';
+let firstNum = null;
+let secondNum = null;
+let operator = null;
+let currentValue = '0';
 
-let firstNum = '';
-let secondNum = '';
+function updateDisplay () { // Updates display with each event
+  display.value += currentValue;
+}
 
-allNumbers.forEach((numbers) => {
-    numbers.addEventListener('click', function() {
-        display.textContent += numbers.value;
-        currentValue = parseFloat(display.innerText);
-    })
-})
-;
+function add (num1, num2) {
+  return parseFloat(num1 + num2);
+}
 
-function operate() {
-    num1 = parseFloat(firstNum);
-    num2 = parseFloat(secondNum);
-    if (operators == '+') {
-      num1 += num2;
-    } else if (operators == '-') {
-      num1 -= num2;
-    } else if (operators == '*') {
-      num1 *= num2;
-    } else {
-      num1 /= num2;
-    }
-};
+function subtract (num1, num2) {
+  return parseFloat(num1 - num2);
+}
 
-operators.forEach((operator) => {
-    operator.addEventListener('click', function() {
-        display.textContent += operator.value;
-        currentValue = display.innerText;
-    })
-});
+function multiply (num1, num2) {
+  return parseFloat(num1 * num2);
+}
 
-clear.addEventListener('click', () => display.innerText = "");
+function divide (num1, num2) {
+  if (num2 == 0) {
+    return NaN;
+  }
+  return parseFloat(num1 / num2);
+}
+
+function operate (firstNum, secondNum, operator) {
+  switch (operator) {
+    case "+": 
+      return add(firstNum, secondNum);
+    
+    case "-":
+      return subtract(firstNum, secondNum);
+    
+    case "*":
+      return multiply(firstNum, secondNum);
+
+    case "/":
+      return divide(firstNum, secondNum);
+  }
+}
