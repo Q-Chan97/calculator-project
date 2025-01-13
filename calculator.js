@@ -10,22 +10,34 @@ let firstNum = null;
 let secondNum = null;
 let operator = null;
 let currentValue = '0';
+let showingResult = false;
 
 allNumbers.forEach((number) => {
   number.addEventListener('click', enterNumber)
 })
 
+
 function updateDisplay () { // Updates display with each event
   display.value += currentValue;
+  showingResult = false;
 }
 
 function enterNumber (e) {
+  if (showingResult = true) {
+    currentValue = null;
+  }
   let operand = e.target.value;
-
-  currentValue += operand;
+  if (currentValue == null || currentValue == 0) {
+    currentValue = operand;
+  }
+  else currentValue += operand;
 
   updateDisplay();
 }
+
+
+
+
 
 function add (num1, num2) {
   return parseFloat(num1 + num2);
