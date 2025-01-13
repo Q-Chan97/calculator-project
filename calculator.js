@@ -11,8 +11,20 @@ let secondNum = null;
 let operator = null;
 let currentValue = '0';
 
+allNumbers.forEach((number) => {
+  number.addEventListener('click', enterNumber)
+})
+
 function updateDisplay () { // Updates display with each event
   display.value += currentValue;
+}
+
+function enterNumber (e) {
+  let operand = e.target.value;
+
+  currentValue += operand;
+
+  updateDisplay();
 }
 
 function add (num1, num2) {
