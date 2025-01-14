@@ -56,7 +56,7 @@ function enterOperator (e) { // Stores display value in separate variable and re
   operator = e.target.value;
 }
 
-function enterEquals() {
+function enterEquals() {  // Calls operate function and updates values for next math problem
   if (firstNum && operator) {
     secondNum = currentValue;
 
@@ -69,7 +69,7 @@ function enterEquals() {
   }
 }
 
-function enterClear() {
+function enterClear() { // Clears all math and display numbers
   firstNum = null;
   secondNum = null;
   operator = null;
