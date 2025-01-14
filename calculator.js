@@ -23,7 +23,7 @@ operators.forEach((operator) => {
 equal.addEventListener('click', enterEquals);
 
 function updateDisplay () { // Updates display with each event
-  display.value += currentValue;
+  display.value = currentValue;
   showingResult = false;
 }
 
