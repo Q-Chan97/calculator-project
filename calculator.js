@@ -23,6 +23,7 @@ operators.forEach((operator) => {
 equal.addEventListener('click', enterEquals);
 clear.addEventListener('click', enterClear);
 positiveNegative.addEventListener('click', switchPosNeg);
+decimal.addEventListener('click', enterDecimal);
 
 function updateDisplay () { // Updates display with each event
   display.value = currentValue;
@@ -79,6 +80,15 @@ function enterClear() { // Clears all math and display numbers
 
 function switchPosNeg() { // Toggles current value to be positive or negative
   currentValue *= '-1';
+  updateDisplay();
+}
+
+function enterDecimal() {
+
+
+  if (!currentValue.includes('.')) {
+    currentValue += '.';
+  }
   updateDisplay();
 }
 
