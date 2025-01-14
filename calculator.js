@@ -54,6 +54,18 @@ function enterOperator (e) { // Stores display value in separate variable and re
   operator = e.target.value;
 }
 
+function enterEquals() {
+  if (firstNum && operator) {
+    secondNum = currentValue;
+  }
+
+  let result = String(operate(firstNum, secondNum, operator));
+  currentValue = result;
+  firstNum = result;
+  operator = null;
+  showingResult = true;
+  updateDisplay();
+}
 
 
 
