@@ -16,13 +16,18 @@ allNumbers.forEach((number) => {
   number.addEventListener('click', enterNumber)
 })
 
+operators.forEach((operator) => {
+  operator.addEventListener('click', enterOperator)
+})
+
+equal.addEventListener('click', enterEquals);
 
 function updateDisplay () { // Updates display with each event
   display.value += currentValue;
   showingResult = false;
 }
 
-function enterNumber (e) {
+function enterNumber (e) { // Stores display value as the first number
   if (showingResult = true) {
     currentValue = null;
   }
@@ -35,7 +40,25 @@ function enterNumber (e) {
   updateDisplay();
 }
 
+function enterOperator (e) { // Stores display value in separate variable and reads operator for math to happen
+  showingResult = false;
 
+  if (operator != null && firstNum != null && currentValue != null) {
+    secondNum = currentValue;
+    let result = operate(firstNum, secondNum, operator);
+    currentValue = result;
+  }
+
+  firstNum = currentValue;
+  currentValue = null;
+  operator = e.target.value;
+}
+
+function enterEquals() {
+  let result = String(operate(firstNum, secondNum, operator));
+  currentValue += result;
+  updateDisplay();
+}
 
 
 
