@@ -22,6 +22,7 @@ operators.forEach((operator) => {
 
 equal.addEventListener('click', enterEquals);
 clear.addEventListener('click', enterClear);
+positiveNegative.addEventListener('click', switchPosNeg);
 
 function updateDisplay () { // Updates display with each event
   display.value = currentValue;
@@ -76,6 +77,10 @@ function enterClear() {
   updateDisplay();
 }
 
+function switchPosNeg() { // Toggles current value to be positive or negative
+  currentValue *= '-1';
+  updateDisplay();
+}
 
 
 function add (num1, num2) {
