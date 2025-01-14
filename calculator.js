@@ -21,6 +21,7 @@ operators.forEach((operator) => {
 })
 
 equal.addEventListener('click', enterEquals);
+clear.addEventListener('click', enterClear);
 
 function updateDisplay () { // Updates display with each event
   display.value = currentValue;
@@ -65,6 +66,14 @@ function enterEquals() {
     showingResult = true;
     updateDisplay();
   }
+}
+
+function enterClear() {
+  firstNum = null;
+  secondNum = null;
+  operator = null;
+  currentValue = '0';
+  updateDisplay();
 }
 
 
