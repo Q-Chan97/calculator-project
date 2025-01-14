@@ -84,8 +84,6 @@ function switchPosNeg() { // Toggles current value to be positive or negative
 }
 
 function enterDecimal() {
-
-
   if (!currentValue.includes('.')) {
     currentValue += '.';
   }
