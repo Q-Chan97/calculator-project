@@ -79,22 +79,22 @@ function enterClear() {
 
 
 function add (num1, num2) {
-  return parseFloat(num1 + num2);
+  return parseFloat(Number(num1) + Number(num2));
 }
 
 function subtract (num1, num2) {
-  return parseFloat(num1 - num2);
+  return parseFloat(Number(num1) - Number(num2));
 }
 
 function multiply (num1, num2) {
-  return parseFloat(num1 * num2);
+  return parseFloat(Number(num1) * Number(num2));
 }
 
 function divide (num1, num2) {
   if (num2 == 0) {
     return NaN;
   }
-  return parseFloat(num1 / num2);
+  return parseFloat(Number(num1) / Number(num2));
 }
 
 function operate (firstNum, secondNum, operator) {
