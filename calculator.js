@@ -57,14 +57,14 @@ function enterOperator (e) { // Stores display value in separate variable and re
 function enterEquals() {
   if (firstNum && operator) {
     secondNum = currentValue;
-  }
 
-  let result = String(operate(firstNum, secondNum, operator));
-  currentValue = result;
-  firstNum = result;
-  operator = null;
-  showingResult = true;
-  updateDisplay();
+    let result = String(operate(firstNum, secondNum, operator));
+    currentValue = result;
+    firstNum = result;
+    operator = null;
+    showingResult = true;
+    updateDisplay();
+  }
 }
 
 
