@@ -12,6 +12,8 @@ let operator = null;
 let currentValue = '0';
 let showingResult = false;
 
+updateDisplay();
+
 allNumbers.forEach((number) => {
   number.addEventListener('click', enterNumber)
 })
@@ -31,15 +33,16 @@ function updateDisplay () { // Updates display with each event
 }
 
 function enterNumber (e) { // Stores display value as the first number
-  if (showingResult = true) {
+  if (showingResult == true) {
     currentValue = null;
   }
   let operand = e.target.value;
   if (currentValue == null || currentValue == 0) {
     currentValue = operand;
   }
-  else currentValue += operand;
-
+  else {
+    currentValue += operand;
+  }
   updateDisplay();
 }
 
