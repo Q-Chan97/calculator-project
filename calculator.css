@@ -1,9 +1,14 @@
 body {
     display: flex;
     align-items: center;
-    flex-direction: column;
+    justify-content: center;
     margin: 0;
-    min-height: 100vh;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
 }
 
 .display-body {
@@ -19,7 +24,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    width: 35%;
+    width: 50%;
 }
 
 .input-field {
@@ -30,13 +35,14 @@ body {
     font-size: 24px;
 }
 
-.button {
+button {
     background-color: lightgray;
     color: black;
     padding: 16px;
-    margin: 8px;
-    width: 125px;
-    height: 125px;
+    margin: 5px;
+    width: 25%;
+    height: 100%;
     font-size: large;
     border: black;
+    border-radius: 25px;
 }
