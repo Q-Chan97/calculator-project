@@ -5,6 +5,7 @@ const decimal = document.querySelector('.decimal');
 const equal = document.querySelector('.equals');
 const clear = document.querySelector('.clear');
 const positiveNegative = document.querySelector('.posNeg');
+const backspace = document.querySelector('.backspace');
 
 let firstNum = null;
 let secondNum = null;
@@ -26,6 +27,8 @@ equal.addEventListener('click', enterEquals);
 clear.addEventListener('click', enterClear);
 positiveNegative.addEventListener('click', switchPosNeg);
 decimal.addEventListener('click', enterDecimal);
+backspace.addEventListener('click', enterBackspace);
+
 
 function updateDisplay () { // Updates display with each event
   display.value = currentValue;
@@ -77,6 +80,11 @@ function enterClear() { // Clears all math and display numbers
   firstNum = null;
   secondNum = null;
   operator = null;
+  currentValue = '0';
+  updateDisplay();
+}
+
+function enterBackspace() {
   currentValue = '0';
   updateDisplay();
 }
