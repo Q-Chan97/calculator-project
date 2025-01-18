@@ -40,7 +40,7 @@ function enterNumber (e) { // Stores display value as the first number
     currentValue = null;
   }
   let operand = e.target.value;
-  if (currentValue == null || currentValue == 0) {
+  if (currentValue !== '0.' && (currentValue == null || currentValue == 0)) {
     currentValue = operand;
   }
   else {
@@ -95,6 +95,12 @@ function switchPosNeg() { // Toggles current value to be positive or negative
 }
 
 function enterDecimal() {
+  if (showingResult == true) {
+    currentValue = null;
+  }
+  if (currentValue == null || currentValue == 0) {
+    currentValue = '0.';
+  }
   if (!currentValue.includes('.')) {
     currentValue += '.';
   }
